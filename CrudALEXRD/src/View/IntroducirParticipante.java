@@ -209,9 +209,9 @@ public class IntroducirParticipante extends javax.swing.JDialog {
             Error.setText("Debe rellenar todos los espacios");
         }
         else{
-            Vector<Persona> users = new Vector<Persona>();
+            Vector<Persona> client = new Vector<Persona>();
             try {
-                users = GestionDeCuentas.CargarDatos();	
+                client = GestionDeCuentas.CargarDatos();	
             }
             catch(Exception ex) {
         	System.out.println("No hay datos");
@@ -226,7 +226,7 @@ public class IntroducirParticipante extends javax.swing.JDialog {
             
                 Persona info = new Persona(nombre,apellido,ci,direc,edad);
             
-                users = GestionDeCuentas.Register_Client(info, users);
+                client = GestionDeCuentas.Register_Client(info, client);
                 
                 Error.setText("");
                 dispose();

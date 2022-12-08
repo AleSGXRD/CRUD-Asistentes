@@ -18,7 +18,7 @@ public class MostrarParticipantes extends javax.swing.JDialog {
     /**
      * Creates new form IntroducirParticipante
      */
-    Vector<Persona> users= new Vector();
+    Vector<Persona> client= new Vector();
     Object[][] k;
     int ln;
     public MostrarParticipantes(java.awt.Frame parent, boolean modal) {
@@ -141,20 +141,20 @@ public class MostrarParticipantes extends javax.swing.JDialog {
 
     private void LoadData(){
         try{
-            users = GestionDeCuentas.CargarDatos();
+            client = GestionDeCuentas.CargarDatos();
         }
         catch(Exception ex)
         {
             Error.setText(ex.getMessage());
         }
-        ln = users.size();
+        ln = client.size();
         k= new Object[ln][6];
         for(int i =0;i<ln;i++){
-            k[i][0] = users.get(i).getNombre();
-            k[i][1] = users.get(i).getApellido();
-            k[i][2] = users.get(i).getCI();
-            k[i][3] = users.get(i).getDireccion();
-            k[i][4] = users.get(i).getEdad();
+            k[i][0] = client.get(i).getNombre();
+            k[i][1] = client.get(i).getApellido();
+            k[i][2] = client.get(i).getCI();
+            k[i][3] = client.get(i).getDireccion();
+            k[i][4] = client.get(i).getEdad();
             k[i][5] = false;
         }
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -197,7 +197,7 @@ public class MostrarParticipantes extends javax.swing.JDialog {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        users = new Vector();
+        client = new Vector();
         for(int i =0;i<ln;i++){
             String nombre = (String)jTable2.getModel().getValueAt(i, 0);
             String apellido = (String)jTable2.getModel().getValueAt(i, 1);
@@ -205,10 +205,10 @@ public class MostrarParticipantes extends javax.swing.JDialog {
             String direc = (String)jTable2.getModel().getValueAt(i, 3);
             int edad = (int)jTable2.getModel().getValueAt(i, 4);
             Persona info = new Persona(nombre,apellido,ci,direc,edad);
-            users.add(info);
+            client.add(info);
         }
         try{
-        GestionDeCuentas.GuardarDatos(users);
+        GestionDeCuentas.GuardarDatos(client);
         }
         catch(Exception ex){
             Error.setText(ex.getMessage());
@@ -219,12 +219,11 @@ public class MostrarParticipantes extends javax.swing.JDialog {
         // TODO add your handling code here:
         for(int i =0;i<ln;i++){
             if((boolean)jTable2.getModel().getValueAt(i, 5)==true){
-            System.out.println("me");
-                users = GestionDeCuentas.Delete_Client((String) k[i][2],users);
+                client = GestionDeCuentas.Delete_Client((String) k[i][2],client);
             }
         }
         try{
-        GestionDeCuentas.GuardarDatos(users);
+        GestionDeCuentas.GuardarDatos(client);
         }
         catch(Exception ex){
             Error.setText(ex.getMessage());

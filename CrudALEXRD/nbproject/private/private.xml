@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/AleXRD/Documents/NetBeansProjects/CrudALEXRD/src/Model/Persona.java</file>
             <file>file:/C:/Users/AleXRD/Documents/NetBeansProjects/CrudALEXRD/src/View/IntroducirParticipante.java</file>
             <file>file:/C:/Users/AleXRD/Documents/NetBeansProjects/CrudALEXRD/src/View/Portal.java</file>
-            <file>file:/C:/Users/AleXRD/Documents/NetBeansProjects/CrudALEXRD/src/Model/CrudALEXRD.java</file>
-            <file>file:/C:/Users/AleXRD/Documents/NetBeansProjects/CrudALEXRD/src/Model/GestionDeCuentas.java</file>
+            <file>file:/C:/Users/AleXRD/Documents/NetBeansProjects/CrudALEXRD/src/View/MostrarParticipantes.java</file>
+            <file>file:/C:/Users/AleXRD/Documents/NetBeansProjects/CrudALEXRD/src/Modelo/Crud.java</file>
+            <file>file:/C:/Users/AleXRD/Documents/NetBeansProjects/CrudALEXRD/src/Modelo/GestionDeCuentas.java</file>
+            <file>file:/C:/Users/AleXRD/Documents/NetBeansProjects/CrudALEXRD/src/Modelo/Persona.java</file>
         </group>
     </open-files>
 </project-private>

@@ -44,7 +44,7 @@ public class GestionDeCuentas {
     //CargarDatos de CLIENTES
     public static Vector<Persona> CargarDatos() throws FileNotFoundException,IOException,ClassNotFoundException{
         File file = new File(direc);
-        Vector<Persona> users=new Vector<Persona>();
+        Vector<Persona> client=new Vector<Persona>();
         
         FileInputStream fileInputStream = new FileInputStream(file);
         DataInputStream InStream = new DataInputStream(fileInputStream);
@@ -59,21 +59,21 @@ public class GestionDeCuentas {
             int edad = InStream.readInt();
             Persona info =new Persona(nombre,apellido,ci,direc,edad);
             
-            users.add(info);
+            client.add(info);
         }
         InStream.close();
-        return users;
+        return client;
         
     }
-    public static Vector<Persona> Register_Client(Persona info, Vector<Persona> users) throws Exception{
-        for(int i =0;i<users.size();i++){
-            if(users.get(i).getCI().equals(info.getCI())){
+    public static Vector<Persona> Register_Client(Persona info, Vector<Persona> client) throws Exception{
+        for(int i =0;i<client.size();i++){
+            if(client.get(i).getCI().equals(info.getCI())){
                 throw new Exception("Ya se encuentra el nombre del usuario");
             }
         }
-        users.add(info);
-        GuardarDatos(users);
-        return users;
+        client.add(info);
+        GuardarDatos(client);
+        return client;
     }
     public static Vector<Persona> Delete_Client(String CI,Vector<Persona> users){
         for(int i =0;i<users.size();i++){
